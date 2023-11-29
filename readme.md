@@ -8,9 +8,9 @@ React Native Circular Menu component for creating interactive circular menus wit
 npm install rn-circular-menu
 ```
 
-|               iOS               |               Android               |
-| :-----------------------------: | :---------------------------------: |
-| ![](assets/screenshots/ios.png) | ![](assets/screenshots/android.jpg) |
+|           iOS            |           Android            |
+| :----------------------: | :--------------------------: |
+| ![](screenshots/ios.png) | ![](screenshots/android.jpg) |
 
 ## Usage
 
@@ -25,11 +25,11 @@ return (
     <View style={{ flex: 1 }}>
         <CircularMenu
             menuData={menuData}
-            animationDuration={500}
-            containerStyles={{ backgroundcolor: "#ffc059" }}
-            menuStyles={{ backgroundColor: "yellow" }}
-            iconStyle={{ tintColor: "blue" }}
-            labelStyle={{ color: "white" }}
+            animationDuration={300}
+            containerStyles={{ backgroundColor: "#ffc059" }}
+            menuStyles={{ backgroundColor: "white" }}
+            iconStyle={{...}}
+            labelStyle={{...}}
         />
     </View>
 );
