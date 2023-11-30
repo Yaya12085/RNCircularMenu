@@ -8,6 +8,12 @@ React Native Circular Menu component for creating interactive circular menus wit
 npm install rn-circular-menu
 ```
 
+or
+
+```bash
+yarn add rn-circular-menu
+```
+
 |                                                iOS                                                 |                                                  Android                                                   |
 | :------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
 | ![ios example](https://github.com/Yaya12085/RNCircularMenu/blob/main/screenshots/ios.png?raw=true) | ![android example](https://github.com/Yaya12085/RNCircularMenu/blob/main/screenshots/android.jpg?raw=true) |
