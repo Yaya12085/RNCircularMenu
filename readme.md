@@ -14,9 +14,26 @@ or
 yarn add rn-circular-menu
 ```
 
-|                                                iOS                                                 |                                                  Android                                                   |
-| :------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
-| ![ios example](https://github.com/Yaya12085/RNCircularMenu/blob/main/screenshots/ios.png?raw=true) | ![android example](https://github.com/Yaya12085/RNCircularMenu/blob/main/screenshots/android.jpg?raw=true) |
+Before using this library, ensure that you have the following dependencies installed in your React Native project:
+
+- [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation)
+- [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/)
+
+## Screenshots
+
+|                                                 iOS                                                 |                                                   Android                                                   |
+| :-------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
+| ![ios example](https://github.com/Yaya12085/RNCircularMenu/blob/main/screenshots/ios1.png?raw=true) | ![android example](https://github.com/Yaya12085/RNCircularMenu/blob/main/screenshots/android1.jpg?raw=true) |
+
+|                                                 iOS                                                 |                                                   Android                                                   |
+| :-------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
+| ![ios example](https://github.com/Yaya12085/RNCircularMenu/blob/main/screenshots/ios2.png?raw=true) | ![android example](https://github.com/Yaya12085/RNCircularMenu/blob/main/screenshots/android2.jpg?raw=true) |
+
+## Demo
+
+|                                             Gif                                              |
+| :------------------------------------------------------------------------------------------: |
+| ![demo](https://github.com/Yaya12085/RNCircularMenu/blob/main/screenshots/demo.gif?raw=true) |
 
 ## Usage
 
@@ -31,11 +48,10 @@ return (
     <View style={{ flex: 1 }}>
         <CircularMenu
             menuData={menuData}
-            animationDuration={300}
             containerStyles={{ backgroundColor: "#ffc059" }}
             menuStyles={{ backgroundColor: "white" }}
-            iconStyle={{...}}
-            labelStyle={{...}}
+            iconStyles={{...}}
+            labelStyles={{...}}
         />
     </View>
 );
@@ -45,14 +61,13 @@ return (
 
 ## Props
 
-| Prop                | Type   | Required | Description                                                                              |
-| ------------------- | ------ | -------- | ---------------------------------------------------------------------------------------- |
-| `menuData`          | Array  | Yes      | Array of objects representing menu items.                                                |
-| `animationDuration` | Number | No       | Duration of the animation for displaying the circular menu. Default is 300 milliseconds. |
-| `containerStyles`   | Object | No       | Custom styles for the circular menu container.                                           |
-| `menuStyles`        | Object | No       | Custom styles for the entire circular menu item.                                         |
-| `iconStyle`         | Object | No       | Custom styles for the icons within each menu item.                                       |
-| `labelStyle`        | Object | No       | Custom styles for the labels (text) within each menu item.                               |
+| Prop              | Type   | Required | Description                                                |
+| ----------------- | ------ | -------- | ---------------------------------------------------------- |
+| `menuData`        | Array  | Yes      | Array of objects representing menu items.                  |
+| `containerStyles` | Object | No       | Custom styles for the circular menu container.             |
+| `menuStyles`      | Object | No       | Custom styles for the entire circular menu item.           |
+| `iconStyles`      | Object | No       | Custom styles for the icons within each menu item.         |
+| `labelStyles`     | Object | No       | Custom styles for the labels (text) within each menu item. |
 
 ## Example menuData
 
@@ -65,7 +80,6 @@ export const menuData = [
         icon: require("./assets/mainIcon.png"),
         isMain: true,
         onPress: () => {
-        // Handle press for main menu
         console.log("Main Menu pressed");
     },
     },
@@ -74,7 +88,6 @@ export const menuData = [
         title: "Option 1",
         icon: require("./assets/option1.png"),
         onPress: () => {
-        // Handle press for option 1
         console.log("Option 1 pressed");
     },
     },
@@ -83,7 +96,6 @@ export const menuData = [
         title: "Option 2",
         icon: require("./assets/option2.png"),
         onPress: () => {
-        // Handle press for option 2
         console.log("Option 2 pressed");
     },
     },
