@@ -1,6 +1,6 @@
 {
   "name": "rn-circular-menu",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React Native Circular Menu component for creating interactive circular menus with customizable styles.",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,6 @@
-import { Dimensions, Animated } from "react-native";
+import { Dimensions } from "react-native";
 
-export const calculatePosition = (index, totalItems, animationValue) => {
+export const calculatePosition = (index, totalItems) => {
   const { width, height } = Dimensions.get("window");
   const radius = Math.min(width, height) / 3;
   const angle = (index * 360) / totalItems;
@@ -9,9 +9,6 @@ export const calculatePosition = (index, totalItems, animationValue) => {
   const y = radius * Math.sin(radians);
 
   return {
-    transform: [
-      { translateX: Animated.multiply(x, animationValue) },
-      { translateY: Animated.multiply(y, animationValue) },
-    ],
+    transform: [{ translateX: x }, { translateY: y }],
   };
 };

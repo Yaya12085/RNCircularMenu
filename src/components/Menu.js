@@ -1,10 +1,6 @@
 import React from "react";
 import { Text, Image, TouchableOpacity } from "react-native";
-import {
-  Gesture,
-  GestureDetector,
-  GestureHandlerRootView,
-} from "react-native-gesture-handler";
+import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -43,72 +39,70 @@ const Menu = ({ menuStyles, iconStyles, labelStyles, menu }) => {
   }));
 
   return (
-    <GestureHandlerRootView>
-      <GestureDetector gesture={gesture}>
-        <Animated.View
+    <GestureDetector gesture={gesture}>
+      <Animated.View
+        style={[
+          animatedGestureStyle,
+          {
+            justifyContent: "center",
+            alignItems: "center",
+          },
+        ]}
+      >
+        <TouchableOpacity
           style={[
-            animatedGestureStyle,
             {
+              position: "absolute",
+              width: 100,
+              height: 100,
+              backgroundColor: "white",
+              borderRadius: 50,
               justifyContent: "center",
               alignItems: "center",
+              shadowColor: "#000000",
+              shadowOffset: {
+                width: 0,
+                height: 6,
+              },
+              shadowOpacity: 0.1,
+              shadowRadius: 6.65,
+              elevation: 9,
+              padding: 6,
+              gap: 4,
             },
+            menuStyles,
           ]}
+          onPress={handlePress}
         >
-          <TouchableOpacity
+          <Image
+            source={menu?.icon}
             style={[
               {
-                position: "absolute",
-                width: 100,
-                height: 100,
-                backgroundColor: "white",
-                borderRadius: 50,
-                justifyContent: "center",
-                alignItems: "center",
-                shadowColor: "#000000",
-                shadowOffset: {
-                  width: 0,
-                  height: 6,
-                },
-                shadowOpacity: 0.1,
-                shadowRadius: 6.65,
-                elevation: 9,
-                padding: 6,
-                gap: 4,
+                width: iconSize,
+                height: iconSize,
               },
-              menuStyles,
+              iconStyles,
             ]}
-            onPress={handlePress}
+            resizeMode="contain"
+          />
+          <Text
+            style={[
+              {
+                textAlign: "center",
+                width: "100%",
+                padding: 4,
+                fontSize: menu?.isMain ? 16 : 13,
+                fontWeight: menu?.isMain ? "bold" : "normal",
+                flexWrap: "wrap",
+              },
+              labelStyles,
+            ]}
           >
-            <Image
-              source={menu?.icon}
-              style={[
-                {
-                  width: iconSize,
-                  height: iconSize,
-                },
-                iconStyles,
-              ]}
-              resizeMode="contain"
-            />
-            <Text
-              style={[
-                {
-                  textAlign: "center",
-                  width: "100%",
-                  padding: 4,
-                  fontSize: menu?.isMain ? 16 : 13,
-                  fontWeight: menu?.isMain ? "bold" : "normal",
-                  flexWrap: "wrap",
-                },
-                labelStyles,
-              ]}
-            >
-              {menu?.title}
-            </Text>
-          </TouchableOpacity>
-        </Animated.View>
-      </GestureDetector>
-    </GestureHandlerRootView>
+            {menu?.title}
+          </Text>
+        </TouchableOpacity>
+      </Animated.View>
+    </GestureDetector>
   );
 };
 
